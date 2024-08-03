@@ -96,7 +96,7 @@ $result = $conn->query($sql);
       /* Grosor del hr */
       background: white;
       /* Gradiente de color */
-  
+
       width: 70%;
       /* Ancho del hr */
       margin: 20px auto;
@@ -110,8 +110,8 @@ $result = $conn->query($sql);
   <header id="header">
     <div class="main">
       <div class="logo">
-        <a class="logo" href="#"></a>
-        <img src="assets/image.png" alt="Logo" />
+        <a class="logo" href="https://www.istlatroncal.edu.ec"></a>
+        <img src="assets/image.png" alt="Logo">
       </div>
       <div class="search">
         <form action="busqueda/busqueda.php" method="get">
@@ -193,6 +193,50 @@ $result = $conn->query($sql);
       </div>
     </div>
   </div>
+  <footer id="footer1">
+    <div class="footer-grid">
+      <div class="footer-left">
+        <a class="logo" href="https://www.istlatroncal.edu.ec">ISTLT</a>
+        <p class="description">
+        Contamos con una gran variedad de libros para reforzar tus conocimientos.
+        </p>
+        <div class="contact">
+          <ul>
+            <li class="company">Instituto Superior Tecnologico La Troncal</li>
+            <li class="address">La Troncal Av. 4 de Noviembre y Loja</li>
+            <li class="phone">Whatsapp: +(593) 991317897</li>
+            <li class="hours">secretaria@istlatroncal.edu.ec</li>
+          </ul>
+        </div>
+        <div class="social-media"></div>
+      </div>
+      <div class="footer-center">
+        <div class="title">
+          <p>Biblioteca</p>
+        </div>
+        <!-- <div class="links">
+          <ul>
+            <li><a href="#">Despre noi</a></li>
+            <li><a href="#">Cum Cumpar?</a></li>
+            <li><a href="#">Livrare si Retur</a></li>
+            <li><a href="#">Termeni si Conditii</a></li>
+            <li><a href="#">Politica de confidentialitate</a></li>
+            <li><a href="#">ANPC</a></li>
+          </ul>
+        </div> -->
+      </div>
+      <div class="footer-right">
+        <p>Contáctanos para mas información</p>
+        <hr style="background-color: #00334a;">
+      <a class="order" href="https://www.istlatroncal.edu.ec/contact/">Contáctanos</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <hr />
+      <p>© 2024 Biblioteca ISTLT - All rights reserved</p>
+    </div>
+  </footer>
 
   <script>
     function openModal(id, titulo, autor, imgSrc, asignatura, codigoisbn) {

@@ -71,35 +71,66 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <?php include '../views/header.php'; ?>
-    <h1>Agregar Libro</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-        <label for="periodo">Periodo:</label>
-        <input type="text" name="periodo" required><br>
-        <label for="asignatura">Asignatura:</label>
-        <input type="text" name="asignatura" required><br>
-        <label for="areaconocimiento">Área de Conocimiento:</label>
-        <input type="text" name="areaconocimiento" required><br>
-        <label for="autor">Autor:</label>
-        <input type="text" name="autor" required><br>
-        <label for="titulo">Título:</label>
-        <input type="text" name="titulo" required><br>
-        <label for="codigoisbn">Código ISBN:</label>
-        <input type="text" name="codigoisbn" required><br>
-        <label for="numpag">Número de Páginas:</label>
-        <input type="number" name="numpag" required><br>
-        <label for="ano">Año:</label>
-        <input type="number" name="ano" min="1900" max="2099" step="1" required><br>
-        <label for="editorial">Editorial:</label>
-        <input type="text" name="editorial" required><br>
-        <label for="tipo">Tipo:</label>
-        <input type="text" name="tipo" required><br>
-        <label for="codigo">Código:</label>
-        <input type="text" name="codigo" required><br>
-        <label for="origen">Origen:</label>
-        <input type="text" name="origen" required><br>
-        <label for="img">Imagen:</label>
-        <input type="file" name="img" accept="image/*"><br>
-        <button type="submit">Agregar Libro</button>
-    </form>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center fw-bold">Agregar Libro</h1> <!-- Negrita y centrado para el título -->
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="periodo" class="form-label fw-bold">Periodo:</label>
+                <input type="text" class="form-control" id="periodo" name="periodo" required>
+            </div>
+            <div class="mb-3">
+                <label for="asignatura" class="form-label fw-bold">Asignatura:</label>
+                <input type="text" class="form-control" id="asignatura" name="asignatura" required>
+            </div>
+            <div class="mb-3">
+                <label for="areaconocimiento" class="form-label fw-bold">Área de Conocimiento:</label>
+                <input type="text" class="form-control" id="areaconocimiento" name="areaconocimiento" required>
+            </div>
+            <div class="mb-3">
+                <label for="autor" class="form-label fw-bold">Autor:</label>
+                <input type="text" class="form-control" id="autor" name="autor" required>
+            </div>
+            <div class="mb-3">
+                <label for="titulo" class="form-label fw-bold">Título:</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" required>
+            </div>
+            <div class="mb-3">
+                <label for="codigoisbn" class="form-label fw-bold">Código ISBN:</label>
+                <input type="text" class="form-control" id="codigoisbn" name="codigoisbn" required>
+            </div>
+            <div class="mb-3">
+                <label for="numpag" class="form-label fw-bold">Número de Páginas:</label>
+                <input type="number" class="form-control" id="numpag" name="numpag" required>
+            </div>
+            <div class="mb-3">
+                <label for="ano" class="form-label fw-bold">Año:</label>
+                <input type="number" class="form-control" id="ano" name="ano" min="1900" max="2099" step="1" required>
+            </div>
+            <div class="mb-3">
+                <label for="editorial" class="form-label fw-bold">Editorial:</label>
+                <input type="text" class="form-control" id="editorial" name="editorial" required>
+            </div>
+            <div class="mb-3">
+                <label for="tipo" class="form-label fw-bold">Tipo:</label>
+                <input type="text" class="form-control" id="tipo" name="tipo" required>
+            </div>
+            <div class="mb-3">
+                <label for="codigo" class="form-label fw-bold">Código:</label>
+                <input type="text" class="form-control" id="codigo" name="codigo" required>
+            </div>
+            <div class="mb-3">
+                <label for="origen" class="form-label fw-bold">Origen:</label>
+                <input type="text" class="form-control" id="origen" name="origen" required>
+            </div>
+            <div class="mb-3">
+                <label for="img" class="form-label fw-bold">Imagen:</label>
+                <input type="file" class="form-control" id="img" name="img" accept="image/*">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-warning">Agregar Libro</button>
+            </div>
+        </form>
+    </div>
+
 </body>
 </html>

@@ -12,21 +12,52 @@ $result = $conn->query($sql);
 
 <head>
     <title>Listar Libros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         body {
             font-family: "Montserrat", sans-serif;
             overflow-x: hidden;
         }
+
         a {
+            flex-direction: row;
+            align-items: center;
             text-decoration: none;
+        }
+
+        h1 {
+            font-size: 50px;
+            text-align: center;
+        }
+
+        .ag {
+            font-size: 30px;
+        
+        }
+
+        .fa-plus-circle {
+            margin-right: 10px; /* Espacio entre el icono y el texto */
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background: white;
+            width: 70%;
+            margin: 20px auto;
         }
     </style>
 </head>
 
 <body>
+    <hr>
     <h1>Lista de Libros</h1>
-    <a href="agregar_libro.php">Agregar Nuevo Libro</a>
+    <hr>
+    <a class="ag" href="agregar_libro.php">
+    <i class="fa fa-plus-circle"></i>
+    Agregar Nuevo Libro</a>
+    <hr>
     <table class="table table-striped table-hover" border="1">
         <tr>
             <th>ID</th>

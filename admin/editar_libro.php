@@ -67,35 +67,66 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <?php include'../views/header.php'   ?>
-    <h1>Editar Libro</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-        <label for="periodo">Periodo:</label>
-        <input type="text" name="periodo" value="<?php echo htmlspecialchars($libro['periodo']); ?>" required><br>
-        <label for="asignatura">Asignatura:</label>
-        <input type="text" name="asignatura" value="<?php echo htmlspecialchars($libro['asignatura']); ?>" required><br>
-        <label for="areaconocimiento">Área de Conocimiento:</label>
-        <input type="text" name="areaconocimiento" value="<?php echo htmlspecialchars($libro['areaconocimiento']); ?>" required><br>
-        <label for="autor">Autor:</label>
-        <input type="text" name="autor" value="<?php echo htmlspecialchars($libro['autor']); ?>" required><br>
-        <label for="titulo">Título:</label>
-        <input type="text" name="titulo" value="<?php echo htmlspecialchars($libro['titulo']); ?>" required><br>
-        <label for="codigoisbn">Código ISBN:</label>
-        <input type="text" name="codigoisbn" value="<?php echo htmlspecialchars($libro['codigoisbn']); ?>" required><br>
-        <label for="numpag">Número de Páginas:</label>
-        <input type="number" name="numpag" value="<?php echo htmlspecialchars($libro['numpag']); ?>" required><br>
-        <label for="ano">Año:</label>
-        <input type="number" name="ano" value="<?php echo htmlspecialchars($libro['ano']); ?>" required><br>
-        <label for="editorial">Editorial:</label>
-        <input type="text" name="editorial" value="<?php echo htmlspecialchars($libro['editorial']); ?>" required><br>
-        <label for="tipo">Tipo:</label>
-        <input type="text" name="tipo" value="<?php echo htmlspecialchars($libro['tipo']); ?>" required><br>
-        <label for="codigo">Código:</label>
-        <input type="text" name="codigo" value="<?php echo htmlspecialchars($libro['codigo']); ?>" required><br>
-        <label for="origen">Origen:</label>
-        <input type="text" name="origen" value="<?php echo htmlspecialchars($libro['origen']); ?>" required><br>
-        <label for="img">Imagen (dejar en blanco si no se desea cambiar):</label>
-        <input type="file" name="img" accept="image/*"><br>
-        <button type="submit" >Actualizar</button>
-    </form>
+<div class="container mt-5">
+        <h1 class="mb-4 text-center fw-bold">Editar Libro</h1> <!-- Negrita para el título -->
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="periodo" class="form-label fw-bold">Periodo:</label>
+                <input type="text" class="form-control" id="periodo" name="periodo" value="<?php echo htmlspecialchars($libro['periodo']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="asignatura" class="form-label fw-bold">Asignatura:</label>
+                <input type="text" class="form-control" id="asignatura" name="asignatura" value="<?php echo htmlspecialchars($libro['asignatura']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="areaconocimiento" class="form-label fw-bold">Área de Conocimiento:</label>
+                <input type="text" class="form-control" id="areaconocimiento" name="areaconocimiento" value="<?php echo htmlspecialchars($libro['areaconocimiento']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="autor" class="form-label fw-bold">Autor:</label>
+                <input type="text" class="form-control" id="autor" name="autor" value="<?php echo htmlspecialchars($libro['autor']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="titulo" class="form-label fw-bold">Título:</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" value="<?php echo htmlspecialchars($libro['titulo']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="codigoisbn" class="form-label fw-bold">Código ISBN:</label>
+                <input type="text" class="form-control" id="codigoisbn" name="codigoisbn" value="<?php echo htmlspecialchars($libro['codigoisbn']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="numpag" class="form-label fw-bold">Número de Páginas:</label>
+                <input type="number" class="form-control" id="numpag" name="numpag" value="<?php echo htmlspecialchars($libro['numpag']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="ano" class="form-label fw-bold">Año:</label>
+                <input type="number" class="form-control" id="ano" name="ano" value="<?php echo htmlspecialchars($libro['ano']); ?>" min="1900" max="2099" step="1" required>
+            </div>
+            <div class="mb-3">
+                <label for="editorial" class="form-label fw-bold">Editorial:</label>
+                <input type="text" class="form-control" id="editorial" name="editorial" value="<?php echo htmlspecialchars($libro['editorial']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="tipo" class="form-label fw-bold">Tipo:</label>
+                <input type="text" class="form-control" id="tipo" name="tipo" value="<?php echo htmlspecialchars($libro['tipo']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="codigo" class="form-label fw-bold">Código:</label>
+                <input type="text" class="form-control" id="codigo" name="codigo" value="<?php echo htmlspecialchars($libro['codigo']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="origen" class="form-label fw-bold">Origen:</label>
+                <input type="text" class="form-control" id="origen" name="origen" value="<?php echo htmlspecialchars($libro['origen']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="img" class="form-label fw-bold">Imagen (dejar en blanco si no se desea cambiar):</label>
+                <input type="file" class="form-control" id="img" name="img" accept="image/*">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-warning">Actualizar</button>
+            </div>
+            <!-- <button type="submit " class="btn btn-warning">Actualizar</button> -->
+        </form>
+    </div>
 </body>
 </html>

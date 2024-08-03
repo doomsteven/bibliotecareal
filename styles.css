@@ -4,6 +4,7 @@
   --accent-light-color: #9ad1d4;
   --accent-dark-color: #80ced7;
   --dark-color: #00334a;
+  --yellow-color: #ffc107;
 }
 
 * {
@@ -353,73 +354,89 @@ a:hover {
 
 /* Footer */
 
-#footer {
+#footer1 {
   padding: 1.5rem;
-  background-color: var(--light-color);
+  background-color: var(--dark-color);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+  color: white;
+
 }
 
-#footer .title {
+#footer1 .title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-#footer .footer-left .logo {
+#footer1 .footer-left .logo {
   font-size: 3rem;
+  color: #ffc107;
 }
 
-#footer .footer-left .description {
+#footer1 .footer-left .description {
   font-size: 1.125rem;
   max-width: 28rem;
 }
 
-#footer .footer-grid {
+#footer1 .footer-grid {
   display: grid;
   grid-template-columns: 40% 30% 30%;
   gap: 1rem;
 }
 
-#footer .footer-left .contact {
+#footer1 .footer-left .contact {
   margin-top: 1.25rem;
 }
 
-#footer .footer-left .contact ul {
+#footer1 .footer-left .contact ul {
   list-style: none;
+
 }
 
-#footer .footer-left .contact ul .phone {
+#footer1 .footer-left .contact ul .phone {
   margin-top: 1rem;
 }
 
-#footer .footer-center .links ul {
+#footer1 .footer-center .links ul {
   list-style: none;
 }
 
-#footer .footer-center .links li {
+#footer1 .footer-center .links li {
   margin-top: 0.5rem;
 }
 
-#footer .footer-right .payment-methods {
+#footer1 .footer-right .payment-methods {
   display: flex;
   gap: 0.725rem;
   font-size: 2.5rem;
 }
 
-#footer .footer-right .reviews p {
+#footer1 .footer-right .reviews p {
   margin: 0.725rem 0;
 }
 
-#footer .footer-right .reviews .star {
+#footer1 .footer-right .reviews .star {
   color: goldenrod;
 }
+#footer1 .footer-right .order {
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  transition: all 0.3s ease;
+}
 
-#footer .copyright {
+#footer1 .footer-right .order:hover {
+  background-color: var(--yellow-color);
+  color: var(--light-color);
+}
+#footer1 .copyright {
   text-align: center;
   font-weight: bold;
 }
 
-#footer .copyright hr {
+#footer1 .copyright hr {
   width: 70%;
   margin: 2rem auto 1rem;
 }
