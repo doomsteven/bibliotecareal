@@ -20,88 +20,84 @@ $result = $conn->query($sql);
   <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&family=Roboto:wght@300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.4);
+   .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
-    }
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 5% auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
 
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto;
-      /* Ajusta el margen superior para centrar verticalmente */
-      padding: 50px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 800px;
-      /* Aumenta el tamaño máximo del modal */
-      display: flex;
-      text-align: center;
-      /* Cambia a alineación izquierda para que los datos se alineen mejor con la imagen */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      font-size: 25px;
-      /* Ajusta el tamaño de la fuente */
-      border-radius: 12px;
-    }
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
 
-    .modal-content img {
-      max-width: 50%;
-      height: 500px;
-      margin-right: 20px;
-    }
+.modal-content .details {
+  text-align: left;
+  width: 100%;
+  line-height: 1.5;
+  padding: 0 20px;
+}
 
-    .modal-content .details {
-      max-width: 50%;
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    }
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-    .close {
-      color: #aaa;
-      position: absolute;
-      /* Ajusta la posición para que esté en la esquina superior derecha */
-      top: 10px;
-      /* Ajusta el espacio desde la parte superior */
-      right: 20px;
-      /* Ajusta el espacio desde el borde derecho */
-      font-size: 32px;
-      /* Aumenta el tamaño del icono de cerrar */
-      font-weight: bold;
-    }
+.add-to-cart-container {
+  display: flex;
+  justify-content: center; /* Centra el botón horizontalmente */
+  width: 100%;
+  margin-top: 20px;
+}
 
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
 
-    .add-to-cart {
-      padding: 7px;
-      background-color: green;
-      color: white;
-      border-radius: 0.5rem;
-      transition: all 0.3s ease;
-    }
+hr {
+  border: 0;
+  height: 2px;
+  background: #888;
+  width: 70%;
+  margin: 20px auto;
+  border-radius: 2px;
+}
 
-    hr {
-      border: 0;
-      height: 2px;
-      /* Grosor del hr */
-      background: white;
-      /* Gradiente de color */
 
-      width: 70%;
-      /* Ancho del hr */
-      margin: 20px auto;
-      /* Espacio alrededor del hr */
-    }
   </style>
 </head>
 
@@ -188,8 +184,7 @@ $result = $conn->query($sql);
         <p id="modal-asignatura" class="materia"></p>
         <hr>
         <p id="modal-codigoisbn" class="descripcion"></p>
-        <hr>
-        <a href="#" class="add-to-cart"><i class="fa-solid fa-bag-shopping"></i> Disponible</a>
+        <!-- <a href="#" class="add-to-cart"><i class="fa-solid fa-bag-shopping"></i> Disponible</a> -->
       </div>
     </div>
   </div>
@@ -241,7 +236,7 @@ $result = $conn->query($sql);
   <script>
     function openModal(id, titulo, autor, imgSrc, asignatura, codigoisbn) {
       document.getElementById("modal-img").src = imgSrc;
-      document.getElementById("modal-title").innerText = "Titulo: " + titulo;
+      document.getElementById("modal-title").innerText = "" + titulo;
       document.getElementById("modal-author").innerText = "Autor: " + autor;
       document.getElementById("modal-asignatura").innerText = "Asignatura: " + asignatura;
       document.getElementById("modal-codigoisbn").innerText = "Codigo: " + codigoisbn;
@@ -259,10 +254,10 @@ $result = $conn->query($sql);
       }
     }
 
-    // Cierra el modal cuando se hace clic en el botón "Disponible" dentro del modal
-    document.querySelector('.modal .add-to-cart').onclick = function() {
-      closeModal();
-    }
+    // // Cierra el modal cuando se hace clic en el botón "Disponible" dentro del modal
+    // document.querySelector('.modal .add-to-cart').onclick = function() {
+    //   closeModal();
+    // }
   </script>
 
 </body>
