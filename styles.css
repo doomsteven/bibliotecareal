@@ -426,7 +426,9 @@ a:hover {
   color: var(--dark-color);
   transition: all 0.3s ease;
 }
-
+#footer1 .footer-right hr {
+  background-color: #00334a;
+}
 #footer1 .footer-right .order:hover {
   background-color: var(--yellow-color);
   color: var(--light-color);

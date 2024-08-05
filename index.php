@@ -95,7 +95,9 @@ hr {
   width: 70%;
   margin: 20px auto;
   border-radius: 2px;
+  background: linear-gradient(to right, var(--primary-color) , var(--yellow-color));
 }
+
 
 
   </style>
@@ -222,7 +224,7 @@ hr {
       </div>
       <div class="footer-right">
         <p>Contáctanos para mas información</p>
-        <hr style="background-color: #00334a;">
+        <hr style="background:#00334a;">
       <a class="order" href="https://www.istlatroncal.edu.ec/contact/">Contáctanos</a>
         </div>
       </div>
