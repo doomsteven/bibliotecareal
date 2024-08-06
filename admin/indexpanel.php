@@ -23,7 +23,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <header id="header">
+    <!-- <header id="header">
       <div class="main">
         <div class="logo">
           <a class="logo" href="#"></a>
@@ -38,9 +38,9 @@
       </div>
       <nav class="categories">
         <a class="category" href="#">Administración de libros</a>
-        <!-- Agrega más enlaces aquí si es necesario -->
+      Agrega más enlaces aquí si es necesario
       </nav>
-    </header>
+    </header>-->
     <main id="content">
         <?php include 'listar_libros.php'; ?>
     </main>

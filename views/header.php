@@ -26,7 +26,9 @@
 <style>
   body{
     font-family: "Montserrat", sans-serif;
+    text-decoration: none;
   }
+
 </style>
 <body>
     <!-- Navigation -->
@@ -37,9 +39,9 @@
           <img src="../../assets/image.png" alt="Logo" />
         </div>
         <div class="links">
-          <a class="link" href="/index.php">
-            <i class="fa-solid fa-user"></i>
-            Cerrar Sesion
+          <a class="link" href="../admin/indexpanel.php">
+            <i class="fa-solid fa-chevron-left"></i>
+            Regresar
           </a>
         </div>
       </div>

@@ -64,6 +64,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Editar Libro</title>
+    <style>
+        .btn.btn-warning {
+            margin: 30px;
+            padding: 30px;
+            border: 30px;
+        }
+    </style>
 </head>
 <body>
 <?php include'../views/header.php'   ?>

@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Si todo está bien, intenta subir el archivo
             if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
-                echo "El archivo ". htmlspecialchars(basename($img)). " ha sido subido.";
+                echo "El archivo " . htmlspecialchars(basename($img)) . " ha sido subido.";
             } else {
                 echo "Lo siento, hubo un error al subir tu archivo.";
             }
@@ -66,9 +66,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Agregar Libro</title>
+    <style>
+        .btn.btn-warning {
+            margin: 30px;
+            padding: 30px;
+            border: 30px;
+        }
+    </style>
+
 </head>
+
 <body>
     <?php include '../views/header.php'; ?>
     <div class="container mt-5">
@@ -133,4 +143,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
 </body>
+
 </html>
