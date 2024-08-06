@@ -20,86 +20,134 @@ $result = $conn->query($sql);
   <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&family=Roboto:wght@300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-   .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
 
-.modal-content {
-  background-color: rgba(255, 255, 255, 0.9);
-  margin: 5% auto;
-  padding: 30px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-size: 18px;
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-}
+    .modal-content {
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 5% auto;
+      padding: 30px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 18px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
 
-.modal-content img {
-  max-width: 100%;
-  height: auto;
+    .modal-content img {
+  width: 200px;           /* Ajusta este valor según el tamaño deseado */
+  height: 300px;          /* Ajusta este valor según el tamaño deseado */
+  object-fit: cover;      /* Escala la imagen para llenar el área, recortando si es necesario */
   border-radius: 12px;
   margin-bottom: 20px;
 }
 
-.modal-content .details {
-  text-align: left;
-  width: 100%;
-  line-height: 1.5;
-  padding: 0 20px;
-}
+    .modal-content .details {
+      text-align: left;
+      width: 100%;
+      line-height: 1.5;
+      padding: 0 20px;
+      text-align: center;
+    }
 
-.close {
-  color: #aaa;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
-.add-to-cart-container {
-  display: flex;
-  justify-content: center; /* Centra el botón horizontalmente */
-  width: 100%;
-  margin-top: 20px;
-}
+    hr {
+      border: 0;
+      height: 2px;
+      background: #888;
+      width: 70%;
+      margin: 20px auto;
+      border-radius: 2px;
+      background: transparent;
+    }
 
+    .modal .add-to-cart {
+      padding: 0.75rem 1rem;
+      background-color: green;
+      color: white;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
 
-hr {
-  border: 0;
-  height: 2px;
-  background: #888;
-  width: 70%;
-  margin: 20px auto;
-  border-radius: 2px;
-  background: linear-gradient(to right, var(--primary-color) , var(--yellow-color));
-}
+    .modal .add-to-cart:hover {
+      background-color: white;
+      color: green;
+    }
 
+    /* Estilos del segundo modal */
+    .notification-modal {
+      display: none;
+      position: fixed;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
 
+    .notification-content {
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
 
+    .notification-content p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+
+    .add-to-wishlist {
+      padding: 0.75rem 1rem;
+      background-color: red;
+      color: white;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .add-to-wishlist:hover {
+      background-color: white;
+      color: red;
+    }
   </style>
 </head>
 
@@ -139,7 +187,7 @@ hr {
         <q class="quote">Contamos con una gran variedad de libros para reforzar tus conocimientos.</q>
         <a class="order" href="admin/login/login.php">Agregar Libros</a>
       </div>
-      <img class="book" src="./assets/hero-book.jpg" />
+      <img class="book" src="./assets/" />
     </div>
   </section>
 
@@ -162,8 +210,8 @@ hr {
               <p class="descripcion"><?php echo htmlspecialchars($row['codigoisbn']); ?></p>
             </div>
             <div class="actions">
-              <a href="#" class="add-to-cart"><i class="fa-solid fa-bag-shopping"></i> Disponible</a>
-              <a href="#" class="add-to-wishlist"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="add-to-cart" onclick="showBookLocation1()" ;><i class="fa-solid fa-bag-shopping"></i> Disponible</a>
+              <a href="#" class="add-to-wishlist" onclick="showBookLocation2()"><i class="fa-solid fa-heart"></i></a>
             </div>
           </div>
         <?php endwhile; ?>
@@ -186,16 +234,38 @@ hr {
         <p id="modal-asignatura" class="materia"></p>
         <hr>
         <p id="modal-codigoisbn" class="descripcion"></p>
-        <!-- <a href="#" class="add-to-cart"><i class="fa-solid fa-bag-shopping"></i> Disponible</a> -->
+        <hr>
+        <div class="actions">
+          <a href="#" class="add-to-cart" onclick="showBookLocation1()" ;><i class="fa-solid fa-bag-shopping"></i> Disponible</a>
+          <a href="#" class="add-to-wishlist" onclick="showBookLocation2()"><i class="fa-solid fa-heart"></i></a>
+        </div>
       </div>
     </div>
   </div>
+  <!-- Segundo Modal (Notificación) -->
+  <div id="notificationModal" class="notification-modal">
+    <div class="notification-content">
+      <span class="close" onclick="closeNotificationModal1()">&times;</span>
+      <p><strong>GRACIAS POR ORDENAR.</strong></p>
+      <p>Puedes hallar el libro en la biblioteca.</p>
+    </div>
+  </div>
+
+  <div id="notificationModallike" class="notification-modal">
+    <div class="notification-content">
+      <span class="close" onclick="closeNotificationModal2()">&times;</span>
+      <p><strong>TE HA GUSTADO EL LIBRO ❤️.</strong></p>
+      <p>Puedes hallar el libro en la biblioteca.</p>
+    </div>
+  </div>
+
+
   <footer id="footer1">
     <div class="footer-grid">
       <div class="footer-left">
         <a class="logo" href="https://www.istlatroncal.edu.ec">ISTLT</a>
         <p class="description">
-        Contamos con una gran variedad de libros para reforzar tus conocimientos.
+          Contamos con una gran variedad de libros para reforzar tus conocimientos.
         </p>
         <div class="contact">
           <ul>
@@ -225,9 +295,9 @@ hr {
       <div class="footer-right">
         <p>Contáctanos para mas información</p>
         <hr style="background:#00334a;">
-      <a class="order" href="https://www.istlatroncal.edu.ec/contact/">Contáctanos</a>
-        </div>
+        <a class="order" href="https://www.istlatroncal.edu.ec/contact/">Contáctanos</a>
       </div>
+    </div>
     </div>
     <div class="copyright">
       <hr />
@@ -239,9 +309,9 @@ hr {
     function openModal(id, titulo, autor, imgSrc, asignatura, codigoisbn) {
       document.getElementById("modal-img").src = imgSrc;
       document.getElementById("modal-title").innerText = "" + titulo;
-      document.getElementById("modal-author").innerText = "Autor: " + autor;
-      document.getElementById("modal-asignatura").innerText = "Asignatura: " + asignatura;
-      document.getElementById("modal-codigoisbn").innerText = "Codigo: " + codigoisbn;
+      document.getElementById("modal-author").innerHTML = "<strong>Autor: </strong>" + autor;
+      document.getElementById("modal-asignatura").innerHTML = "<strong>Asignatura: </strong>" + asignatura;
+      document.getElementById("modal-codigoisbn").innerHTML = "<strong>ISBN: </strong>" + codigoisbn;
       document.getElementById("myModal").style.display = "block";
     }
 
@@ -256,10 +326,26 @@ hr {
       }
     }
 
-    // // Cierra el modal cuando se hace clic en el botón "Disponible" dentro del modal
+
     // document.querySelector('.modal .add-to-cart').onclick = function() {
     //   closeModal();
     // }
+
+    function showBookLocation1() {
+      document.getElementById("notificationModal").style.display = "block";
+    }
+
+    function closeNotificationModal1() {
+      document.getElementById("notificationModal").style.display = "none";
+    }
+
+    function showBookLocation2() {
+      document.getElementById("notificationModallike").style.display = "block";
+    }
+
+    function closeNotificationModal2() {
+      document.getElementById("notificationModallike").style.display = "none";
+    }
   </script>
 
 </body>

@@ -303,10 +303,10 @@ a:hover {
   transition: all 0.3s ease;
 }
 
-/* .products .product .actions .add-to-cart:hover {
+.products .product .actions .add-to-cart:hover {
   background-color: var(--light-color);
-  color: var(--dark-color);
-} */
+  color: green;
+} 
 
 .products .product .actions .add-to-wishlist {
   padding: 0.75rem 1rem;

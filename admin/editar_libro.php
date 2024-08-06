@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Subir nueva imagen si se ha subido
     if ($img) {
-        $target_dir = "../../../products/";
+        $target_dir = "../assets/products/";
         $target_file = $target_dir . basename($img);
         move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
     } else {
