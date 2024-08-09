@@ -50,12 +50,12 @@ $result = $conn->query($sql);
     }
 
     .modal-content img {
-  width: 200px;           /* Ajusta este valor según el tamaño deseado */
-  height: 300px;          /* Ajusta este valor según el tamaño deseado */
-  object-fit: cover;      /* Escala la imagen para llenar el área, recortando si es necesario */
-  border-radius: 12px;
-  margin-bottom: 20px;
-}
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
 
     .modal-content .details {
       text-align: left;
@@ -187,7 +187,7 @@ $result = $conn->query($sql);
         <q class="quote">Contamos con una gran variedad de libros para reforzar tus conocimientos.</q>
         <a class="order" href="admin/login/login.php">Agregar Libros</a>
       </div>
-      <img class="book" src="./assets/" />
+      <img class="book" src="./assets/cod.webp" />
     </div>
   </section>
 

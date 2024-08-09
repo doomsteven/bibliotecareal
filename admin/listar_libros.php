@@ -88,6 +88,7 @@ $result = $conn->query($sql);
             text-decoration: none;
             cursor: pointer;
         }
+        
     </style>
 </head>
 

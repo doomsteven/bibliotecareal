@@ -20,6 +20,9 @@
       referrerpolicy="no-referrer"
     />
 </head>
+<style>
+  
+</style>
 <body>
     <!-- Navigation -->
     <header id="header">

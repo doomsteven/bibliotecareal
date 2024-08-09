@@ -1,9 +1,9 @@
 <?php
 // Conexión a la base de datos
-$servername = "localhost"; // Cambia esto si es necesario
-$username = "root"; // Cambia esto si es necesario
-$password = ""; // Cambia esto si es necesario
-$dbname = "bibliot"; // Cambia esto si es necesario
+$servername = "bl0fufvntuwnh4e7ie4l-mysql.services.clever-cloud.com"; // Cambia esto si es necesario
+$username = "u81jarbpi7jerby0"; // Cambia esto si es necesario
+$password = "ZzSCxLuHflGDqI9QCBbS"; // Cambia esto si es necesario
+$dbname = "bl0fufvntuwnh4e7ie4l"; // Cambia esto si es necesario
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
