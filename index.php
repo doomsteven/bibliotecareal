@@ -185,7 +185,7 @@ $result = $conn->query($sql);
       <div class="description">
         <h1 class="title">Biblioteca Institucional</h1>
         <q class="quote">Contamos con una gran variedad de libros para reforzar tus conocimientos.</q>
-        <a class="order" href="admin/login/login.php">Agregar Libros</a>
+        <!-- <a class="order" href="admin/login/login.php">Agregar Libros</a> -->
       </div>
       <img class="book" src="./assets/cod.webp" />
     </div>
