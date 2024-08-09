@@ -106,11 +106,18 @@
       <div class="description">
         <h1 class="title">Biblioteca Institucional</h1>
         <q class="quote">Contamos con una gran variedad de libros para reforzar tus conocimientos.</q>
-        <a class="order" href="index.php">Visita nuestro catalogo</a>
+        <a id="catalog-link" class="order" href="#">Visita nuestro catalogo</a>
       </div>
       <img class="book" src="assets/image.png" />
     </div>
   </section>
+
+  <script>
+    document.getElementById('catalog-link').addEventListener('click', function (event) {
+      event.preventDefault(); // Evita el comportamiento por defecto del enlace
+      window.location.href = 'index.php'; // Redirige a index.php
+    });
+  </script>
 </body>
 
 </html>
