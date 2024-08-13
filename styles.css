@@ -367,6 +367,7 @@ a:hover {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  
 }
 
 #footer1 .footer-left .logo {
@@ -398,12 +399,24 @@ a:hover {
   margin-top: 1rem;
 }
 
-#footer1 .footer-center .links ul {
+#footer1 .footer-center .links2 ul {
   list-style: none;
+  padding: 0; 
 }
 
-#footer1 .footer-center .links li {
+#footer1 .footer-center .links2 ul li {
+  margin-bottom: 10px; 
+  font-weight: normal;
+}
+
+#footer1 .footer-center .link3 {
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+#footer1 .footer-center .link3:hover {
   margin-top: 0.5rem;
+  color: var(--yellow-color);
 }
 
 #footer1 .footer-right .payment-methods {

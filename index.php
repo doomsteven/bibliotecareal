@@ -2,7 +2,7 @@
 include 'app/conexion.php';
 
 // Consulta para obtener los datos de los libros
-$sql = "SELECT id_peri, titulo, autor, img, asignatura, codigoisbn FROM libro";
+$sql = "SELECT id_peri, titulo, autor, img, asignatura, codigoisbn, ano, editorial FROM libro";
 $result = $conn->query($sql);
 ?>
 
@@ -50,8 +50,8 @@ $result = $conn->query($sql);
     }
 
     .modal-content img {
-      width: 200px;
-      height: 300px;
+      width: 300px;
+      height: 500px;
       object-fit: cover;
       border-radius: 12px;
       margin-bottom: 20px;
@@ -62,7 +62,14 @@ $result = $conn->query($sql);
       width: 100%;
       line-height: 1.5;
       padding: 0 20px;
+    }
+    .modal-content .details .title{
       text-align: center;
+    }
+    .modal-content .details .actions{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
     }
 
     .close {
@@ -84,7 +91,7 @@ $result = $conn->query($sql);
 
     hr {
       border: 0;
-      height: 2px;
+      height: 1px;
       background: #888;
       width: 70%;
       margin: 20px auto;
@@ -104,6 +111,19 @@ $result = $conn->query($sql);
       background-color: white;
       color: green;
     }
+    .modal .question {
+      padding: 0.75rem 1rem;
+      background-color: var(--dark-color);
+      color: var(--yellow-color);
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .modal .question:hover {
+      background-color: var(--yellow-color);
+      color: var(--dark-color);
+    }
+
 
     /* Estilos del segundo modal */
     .notification-modal {
@@ -183,7 +203,7 @@ $result = $conn->query($sql);
   <section id="hero">
     <div class="overlay">
       <div class="description">
-        <h1 class="title">Biblioteca Institucional</h1>
+        <h1 class="title">Biblioteca Instituto La Troncal.</h1>
         <q class="quote">Contamos con una gran variedad de libros para reforzar tus conocimientos.</q>
         <!-- <a class="order" href="admin/login/login.php">Agregar Libros</a> -->
       </div>
@@ -193,13 +213,13 @@ $result = $conn->query($sql);
 
   <!-- Products -->
   <section id="promo" class="products-section">
-    <h2 class="title">Biblioteca Instituto La Troncal</h2>
+    <h2 class="title">Catálogo de libros.</h2>
     <div class="products">
       <?php if ($result->num_rows > 0) : ?>
         <?php while ($row = $result->fetch_assoc()) : ?>
           <div class="product">
-            <a href="javascript:void(0);" onclick="openModal('<?php echo htmlspecialchars($row['id_peri']); ?>', '<?php echo htmlspecialchars($row['titulo']); ?>', '<?php echo htmlspecialchars($row['autor']); ?>', 'assets/products/<?php echo htmlspecialchars($row['img']); ?>', '<?php echo htmlspecialchars($row['asignatura']); ?>', '<?php echo htmlspecialchars($row['codigoisbn']); ?>')">
-              <div class="image">
+          <a href="javascript:void(0);" onclick="openModal('<?php echo htmlspecialchars($row['id_peri']); ?>', '<?php echo htmlspecialchars($row['titulo']); ?>', '<?php echo htmlspecialchars($row['autor']); ?>', 'assets/products/<?php echo htmlspecialchars($row['img']); ?>', '<?php echo htmlspecialchars($row['asignatura']); ?>', '<?php echo htmlspecialchars($row['codigoisbn']); ?>', '<?php echo htmlspecialchars($row['ano']); ?>', '<?php echo htmlspecialchars($row['editorial']); ?>')">
+          <div class="image">
                 <img src="assets/products/<?php echo htmlspecialchars($row['img']); ?>" alt="<?php echo htmlspecialchars($row['titulo']); ?>" />
               </div>
             </a>
@@ -231,6 +251,10 @@ $result = $conn->query($sql);
         <hr>
         <p id="modal-author" class="author"></p>
         <hr>
+        <p id="modal-editorial" class="editorial"></p>
+        <hr>
+        <p id="modal-ano" class="ano"></p>
+        <hr>
         <p id="modal-asignatura" class="materia"></p>
         <hr>
         <p id="modal-codigoisbn" class="descripcion"></p>
@@ -238,6 +262,7 @@ $result = $conn->query($sql);
         <div class="actions">
           <a href="#" class="add-to-cart" onclick="showBookLocation1()" ;><i class="fa-solid fa-bag-shopping"></i> Disponible</a>
           <a href="#" class="add-to-wishlist" onclick="showBookLocation2()"><i class="fa-solid fa-heart"></i></a>
+          <a href="#" class="question" onclick="showBookLocation3()" ;><i class="fa-solid fa-search"></i>Encontrarlo</a>
         </div>
       </div>
     </div>
@@ -256,6 +281,15 @@ $result = $conn->query($sql);
       <span class="close" onclick="closeNotificationModal2()">&times;</span>
       <p><strong>TE HA GUSTADO EL LIBRO ❤️.</strong></p>
       <p>Puedes hallar el libro en la biblioteca.</p>
+    </div>
+  </div>
+
+  
+  <div id="notificationModalquestion" class="notification-modal">
+    <div class="notification-content">
+      <span class="close" onclick="closeNotificationModal3()">&times;</span>
+      <p><strong>BUSCANDO...</strong></p>
+      <p>Libro encontrado en la biblioteca física de la institución.</p>
     </div>
   </div>
 
@@ -279,18 +313,17 @@ $result = $conn->query($sql);
       </div>
       <div class="footer-center">
         <div class="title">
-          <p>Biblioteca</p>
+          <p>Acceso rápido</p>
         </div>
-        <!-- <div class="links">
+        <div class="links2">
           <ul>
-            <li><a href="#">Despre noi</a></li>
-            <li><a href="#">Cum Cumpar?</a></li>
-            <li><a href="#">Livrare si Retur</a></li>
-            <li><a href="#">Termeni si Conditii</a></li>
-            <li><a href="#">Politica de confidentialitate</a></li>
-            <li><a href="#">ANPC</a></li>
+            <li><a class="link3" href="https://www.istlatroncal.edu.ec">Quiénes somos</a></li>
+            <li><a class="link3" href="https://www.istlatroncal.edu.ec">Carreras</a></li>
+            <li><a class="link3" href="https://www.istlatroncal.edu.ec">Noticias</a></li>
+            <li><a class="link3" href="https://www.istlatroncal.edu.ec">Contáctanos</a></li>
+            
           </ul>
-        </div> -->
+        </div> 
       </div>
       <div class="footer-right">
         <p>Contáctanos para mas información</p>
@@ -306,10 +339,12 @@ $result = $conn->query($sql);
   </footer>
 
   <script>
-    function openModal(id, titulo, autor, imgSrc, asignatura, codigoisbn) {
+    function openModal(id, titulo, autor, imgSrc, asignatura, codigoisbn, ano, editorial) {
       document.getElementById("modal-img").src = imgSrc;
       document.getElementById("modal-title").innerText = "" + titulo;
       document.getElementById("modal-author").innerHTML = "<strong>Autor: </strong>" + autor;
+      document.getElementById("modal-editorial").innerHTML = "<strong>Editorial: </strong>" + editorial;
+      document.getElementById("modal-ano").innerHTML = "<strong>Año: </strong>" + ano;
       document.getElementById("modal-asignatura").innerHTML = "<strong>Asignatura: </strong>" + asignatura;
       document.getElementById("modal-codigoisbn").innerHTML = "<strong>ISBN: </strong>" + codigoisbn;
       document.getElementById("myModal").style.display = "block";
@@ -345,6 +380,13 @@ $result = $conn->query($sql);
 
     function closeNotificationModal2() {
       document.getElementById("notificationModallike").style.display = "none";
+    }
+    function showBookLocation3() {
+      document.getElementById("notificationModalquestion").style.display = "block";
+    }
+
+    function closeNotificationModal3() {
+      document.getElementById("notificationModalquestion").style.display = "none";
     }
   </script>
 
