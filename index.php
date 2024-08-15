@@ -217,7 +217,7 @@ $result = $conn->query($sql);
       <div class="links">
         <a class="link" href="admin/login/login.php">
           <i class="fa-solid fa-user"></i>
-          Iniciar Sesion
+          Iniciar Sesión
         </a>
       </div>
     </div>
