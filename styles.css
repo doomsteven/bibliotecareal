@@ -371,7 +371,7 @@ a:hover {
 }
 
 #footer1 .footer-left .logo {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #ffc107;
 }
 
@@ -502,7 +502,7 @@ a:hover {
 }
 
 @media screen and (max-width: 767px) {
-  #footer .footer-grid {
+  #footer1 .footer-grid {
     grid-template-columns: 1fr;
   }
 }

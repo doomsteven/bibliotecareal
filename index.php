@@ -324,13 +324,13 @@ $result = $conn->query($sql);
   <footer id="footer1">
     <div class="footer-grid">
       <div class="footer-left">
-        <a class="logo" href="https://www.istlatroncal.edu.ec">ISTLT</a>
+        <a class="logo" href="https://www.istlatroncal.edu.ec">Instituto Superior Tecnológico La Troncal.</a>
         <p class="description">
           Contamos con una gran variedad de libros para reforzar tus conocimientos.
         </p>
         <div class="contact">
           <ul>
-            <li class="company">Instituto Superior Tecnologico La Troncal</li>
+            <li class="company"><strong>Dirección</strong></li>
             <li class="address">La Troncal Av. 4 de Noviembre y Loja</li>
             <li class="phone">Whatsapp: +(593) 991317897</li>
             <li class="hours">secretaria@istlatroncal.edu.ec</li>
