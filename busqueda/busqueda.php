@@ -277,7 +277,7 @@ $result = $stmt->get_result();
                             <p class="codigo"><strong>Código:</strong> <?php echo htmlspecialchars($row['codigo']); ?></p>
                             <p class="origen"><strong>Origen:</strong> <?php echo htmlspecialchars($row['origen']); ?></p>
                             <div class="actions">
-                                <a href="#" class="add-to-cart" onclick="showBookLocation1()"><i class="fa-solid fa-bag-shopping"></i> Disponible</a>
+                                <a href="#" class="add-to-cart" onclick="showBookLocation1()"><i class=""></i> Disponible</a>
                                 <a href="#" class="add-to-wishlist" onclick="showBookLocation2()"><i class="fa-solid fa-heart"></i></a>
                             </div>
                         </div>
@@ -309,9 +309,9 @@ $result = $stmt->get_result();
                 <p id="modal-codigo" class="codigo"></p>
                 <p id="modal-origen" class="origen"></p>
                 <div class="actions">
-                    <a href="#" class="add-to-cart" onclick="showBookLocation1()" ;><i class="fa-solid fa-bag-shopping"></i> Disponible</a>
+                    <a href="#" class="add-to-cart" onclick="showBookLocation1()" ;><i class=""></i> Disponible</a>
                     <a href="#" class="add-to-wishlist" onclick="showBookLocation2()"><i class="fa-solid fa-heart"></i></a>
-                    <a href="#" class="question" onclick="showBookLocation3()" ;><i class="fa-solid fa-search"></i>Encontrarlo</a>
+                    <a href="#" class="question" onclick="showBookLocation3()" ;><i class=""></i>Ver libro</a>
                 </div>
             </div>
         </div>
@@ -338,8 +338,8 @@ $result = $stmt->get_result();
   <div id="notificationModalquestion" class="notification-modal">
     <div class="notification-content">
       <span class="close" onclick="closeNotificationModal3()">&times;</span>
-      <p><strong>BUSCANDO...</strong></p>
-      <p>Libro encontrado en la biblioteca física de la institución.</p>
+      <p><strong></strong></p>
+      <p>Ya estas observando los detalles del libro.</p>
     </div>
   </div>
   <?php include '../views/footer.php'
