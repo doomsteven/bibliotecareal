@@ -88,7 +88,10 @@ $result = $conn->query($sql);
             text-decoration: none;
             cursor: pointer;
         }
-        
+        .table-small {
+    width: 80%;
+    margin: 0 auto;
+}
     </style>
 </head>
 
@@ -119,7 +122,7 @@ $result = $conn->query($sql);
         Agregar Nuevo Libro
     </a>
     <hr>
-    <table class="table table-striped table-hover" border="1">
+    <table class="table table-striped table-hover table-small" border="1">
         <tr>
             <th>ID</th>
             <th>Periodo</th>
