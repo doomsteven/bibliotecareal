@@ -13,6 +13,7 @@ $result = $conn->query($sql);
 <head>
     <title>Listar Libros</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="../styles.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
@@ -20,11 +21,20 @@ $result = $conn->query($sql);
             font-family: "Montserrat", sans-serif;
             overflow-x: hidden;
         }
-
-        a {
-            flex-direction: row;
-            align-items: center;
+        body a {
             text-decoration: none;
+        }
+        .titulo1 {	
+            flex-direction: row;
+            text-align: center;
+            font-size: 30px;
+            text-decoration: none;
+        }
+        .titulo1 a{	
+            text-decoration: none;
+        }
+        .titulo1 a:hover{	
+            color: #ffc107;
         }
 
         h1 {
@@ -32,9 +42,6 @@ $result = $conn->query($sql);
             text-align: center;
         }
 
-        .ag {
-            font-size: 30px;
-        }
 
         .fa-plus-circle {
             margin-right: 10px;
@@ -117,10 +124,13 @@ $result = $conn->query($sql);
     <hr>
     <h1>Lista de Libros</h1>
     <hr>
-    <a class="ag" href="agregar_libro.php">
-        <i class="fa fa-plus-circle"></i>
-        Agregar Nuevo Libro
-    </a>
+    <div class="titulo1">
+
+        <a class="ag" href="agregar_libro.php">
+            <i class="fa fa-plus-circle"></i>
+            Agregar nuevo libro.
+        </a>
+    </div>
     <hr>
     <table class="table table-striped table-hover table-small" border="1">
         <tr>
@@ -182,6 +192,52 @@ $result = $conn->query($sql);
             </div>
         </div>
     </div>
+    <hr>
+
+    <footer id="footer1">
+    <div class="footer-grid">
+      <div class="footer-left">
+        <a class="logo" href="https://www.istlatroncal.edu.ec">Instituto Superior Tecnológico La Troncal.</a>
+        <p class="description">
+          Contamos con una gran variedad de libros para reforzar tus conocimientos.
+        </p>
+        <div class="contact">
+          <ul>
+            <li class="company"><strong>Dirección</strong></li>
+            <li class="address">La Troncal Av. 4 de Noviembre y Loja</li>
+            <li class="phone">Whatsapp: +(593) 991317897</li>
+            <li class="hours">secretaria@istlatroncal.edu.ec</li>
+          </ul>
+        </div>
+        <div class="social-media"></div>
+      </div>
+      <div class="footer-center">
+        <div class="title">
+          <p>Acceso rápido</p>
+        </div>
+        <div class="links2">
+          <ul>
+            <li><a class="link3" href="https://www.istlatroncal.edu.ec">Quiénes somos</a></li>
+            <li><a class="link3" href="https://www.istlatroncal.edu.ec">Carreras</a></li>
+            <li><a class="link3" href="https://www.istlatroncal.edu.ec">Noticias</a></li>
+            <li><a class="link3" href="https://www.istlatroncal.edu.ec">Contáctanos</a></li>
+            
+          </ul>
+        </div> 
+      </div>
+      <div class="footer-right">
+        <p>Contáctanos para mas información</p>
+        <hr style="background:#00334a;">
+        <a class="order" href="https://www.istlatroncal.edu.ec/contact/">Contáctanos</a>
+      </div>
+    </div>
+    </div>
+    <div class="copyright">
+      <hr />
+      <p>© 2024 Biblioteca ISTLT - All rights reserved</p>
+    </div>
+  </footer>
+
 
     <!-- Scripts -->
     <script>
