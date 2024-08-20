@@ -342,50 +342,8 @@ $result = $stmt->get_result();
       <p>Libro encontrado en la biblioteca física de la institución.</p>
     </div>
   </div>
-  <footer id="footer1">
-    <div class="footer-grid">
-      <div class="footer-left">
-        <a class="logo" href="https://www.istlatroncal.edu.ec">Instituto Superior Tecnológico La Troncal.</a>
-        <p class="description">
-          Contamos con una gran variedad de libros para reforzar tus conocimientos.
-        </p>
-        <div class="contact">
-          <ul>
-            <li class="company"><strong>Dirección</strong></li>
-            <li class="address">La Troncal Av. 4 de Noviembre y Loja</li>
-            <li class="phone">Whatsapp: +(593) 991317897</li>
-            <li class="hours">secretaria@istlatroncal.edu.ec</li>
-          </ul>
-        </div>
-        <div class="social-media"></div>
-      </div>
-      <div class="footer-center">
-        <div class="title">
-          <p>Acceso rápido</p>
-        </div>
-        <div class="links2">
-          <ul>
-            <li><a class="link3" href="https://www.istlatroncal.edu.ec">Quiénes somos</a></li>
-            <li><a class="link3" href="https://www.istlatroncal.edu.ec">Carreras</a></li>
-            <li><a class="link3" href="https://www.istlatroncal.edu.ec">Noticias</a></li>
-            <li><a class="link3" href="https://www.istlatroncal.edu.ec">Contáctanos</a></li>
-            
-          </ul>
-        </div> 
-      </div>
-      <div class="footer-right">
-        <p>Contáctanos para mas información</p>
-        <hr style="background:#00334a;">
-        <a class="order" href="https://www.istlatroncal.edu.ec/contact/">Contáctanos</a>
-      </div>
-    </div>
-    </div>
-    <div class="copyright">
-      <hr />
-      <p>© 2024 Biblioteca ISTLT - All rights reserved</p>
-    </div>
-  </footer>
-
+  <?php include '../views/footer.php'
+   ?>
     <script>
         function openModal(title, author, imgSrc, materia, codigoisbn, numpag, ano, editorial, tipo, codigo, origen) {
             document.getElementById('modal-title').textContent = title;

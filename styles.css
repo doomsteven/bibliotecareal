@@ -432,6 +432,9 @@ a:hover {
 #footer1 .footer-right .reviews .star {
   color: goldenrod;
 }
+#footer1 .footer-right .logos .face{
+color: white;
+}
 #footer1 .footer-right .order {
   width: fit-content;
   padding: 1rem;
