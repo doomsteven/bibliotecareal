@@ -6,7 +6,7 @@
 } */
 
 :root {
-  --color-title: #00334a;
+  --color-title: white;
 }
 
 footer {
@@ -14,9 +14,12 @@ footer {
   left: 0;
   bottom: 12px;
   width: 100%;
-  background: white;
+  background: #00334a;
   padding-top: 60px;
   color: #ffc107;
+}
+footer a{
+  color: white;
 }
 footer a:hover{
   color: #ffc107;
@@ -25,6 +28,7 @@ footer a:hover{
 #footer-top > img {
   height: 50px;
   margin: 0 auto 50px;
+  border-radius: 10px;
 }
 
 #footer-top, #footer-bottom {
@@ -57,7 +61,7 @@ footer a:hover{
 
 .links-column {
   display: grid;
-  gap: 10px;
+  gap: 40px;
   text-align: center;
 }
 
