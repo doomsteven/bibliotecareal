@@ -5,6 +5,12 @@ include dirname(__DIR__, 1) . '/app/conexion.php';
 // Consulta para obtener todos los libros
 $sql = "SELECT * FROM libro";
 $result = $conn->query($sql);
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    // Si no hay sesión activa, redirige a la página de inicio de sesión
+    header("Location: ../../index.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,19 +27,23 @@ $result = $conn->query($sql);
             font-family: "Montserrat", sans-serif;
             overflow-x: hidden;
         }
+
         body a {
             text-decoration: none;
         }
-        .titulo1 {	
+
+        .titulo1 {
             flex-direction: row;
             text-align: center;
             font-size: 30px;
             text-decoration: none;
         }
-        .titulo1 a{	
+
+        .titulo1 a {
             text-decoration: none;
         }
-        .titulo1 a:hover{	
+
+        .titulo1 a:hover {
             color: #ffc107;
         }
 
@@ -95,10 +105,11 @@ $result = $conn->query($sql);
             text-decoration: none;
             cursor: pointer;
         }
+
         .table-small {
-    width: 80%;
-    margin: 0 auto;
-}
+            width: 80%;
+            margin: 0 auto;
+        }
     </style>
 </head>
 
@@ -188,36 +199,36 @@ $result = $conn->query($sql);
             <p>¿Estás seguro de que deseas cerrar sesión?</p>
             <div class="modal-footer">
                 <button class="btn btn-secondary" id="cancelBtn">Cancelar</button>
-                <a href="/index.php" class="btn btn-warning" id="confirmLogoutBtn">Cerrar Sesión</a>
+                <a href="logout.php" class="btn btn-warning" id="confirmLogoutBtn">Cerrar Sesión</a>
             </div>
         </div>
     </div>
     <hr>
-   <?php include '../views/footer.php'
-   ?>
+    <?php include '../views/footer.php'
+    ?>
 
     <!-- Scripts -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             var logoutLink = document.getElementById("logoutLink");
             var logoutModal = document.getElementById("logoutModal");
             var closeModal = document.getElementsByClassName("close")[0];
             var cancelBtn = document.getElementById("cancelBtn");
 
-            logoutLink.onclick = function (event) {
+            logoutLink.onclick = function(event) {
                 event.preventDefault();
                 logoutModal.style.display = "block";
             }
 
-            closeModal.onclick = function () {
+            closeModal.onclick = function() {
                 logoutModal.style.display = "none";
             }
 
-            cancelBtn.onclick = function () {
+            cancelBtn.onclick = function() {
                 logoutModal.style.display = "none";
             }
 
-            window.onclick = function (event) {
+            window.onclick = function(event) {
                 if (event.target == logoutModal) {
                     logoutModal.style.display = "none";
                 }

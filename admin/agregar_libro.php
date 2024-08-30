@@ -61,6 +61,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Redirigir a la lista de libros
     header("Location: ../../admin/indexpanel.php");
     exit();
+
+    session_start();
+    if (!isset($_SESSION['usuario'])) {
+        // Si no hay sesión activa, redirige a la página de inicio de sesión
+        header("Location: ../index.php");
+        exit();
+    }
 }
 ?>
 

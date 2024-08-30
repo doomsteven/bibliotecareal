@@ -110,10 +110,10 @@ $result = $conn->query($sql);
       transition: all 0.3s ease;
     }
 
-    .modal .add-to-cart:hover {
+    /* .modal .add-to-cart:hover {
       background-color: white;
       color: green;
-    }
+    } */
 
     .modal .question {
       padding: 0.75rem 1rem;
