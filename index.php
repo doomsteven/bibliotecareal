@@ -257,8 +257,8 @@ $result = $conn->query($sql);
               <p class="descripcion"><?php echo htmlspecialchars($row['codigoisbn']); ?></p>
             </div>
             <div class="actions">
-              <a href="#" class="add-to-cart" onclick="showBookLocation1()" ;><i class=""></i> Disponible</a>
-              <a href="#" class="add-to-wishlist" onclick="showBookLocation2()"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="add-to-cart" ;> Disponible</a>
+              <!-- <a href="#" class="add-to-wishlist" onclick="showBookLocation2()"><i class="fa-solid fa-heart"></i></a> -->
             </div>
           </div>
         <?php endwhile; ?>
@@ -286,11 +286,11 @@ $result = $conn->query($sql);
         <hr>
         <p id="modal-codigoisbn" class="descripcion"></p>
         <hr>
-        <div class="actions">
+        <!-- <div class="actions">
           <a href="#" class="add-to-cart" onclick="showBookLocation1()" ;><i class=""></i> Disponible</a>
           <a href="#" class="add-to-wishlist" onclick="showBookLocation2()"><i class="fa-solid fa-heart"></i></a>
-          <a href="#" class="question" onclick="showBookLocation3()" ;><i class=""></i>Ver libro</a>
-        </div>
+          <a href="#" class="question" onclick="showBookLocation3()" ;><i class=""></i>Ver libro</a
+        </div> -->
       </div>
     </div>
   </div>
@@ -320,8 +320,8 @@ $result = $conn->query($sql);
     </div>
   </div>
 
-<?php include 'views/footer.php'
-?>
+  <?php include 'views/footer.php'
+  ?>
 
   <script>
     function openModal(id, titulo, autor, imgSrc, asignatura, codigoisbn, ano, editorial) {

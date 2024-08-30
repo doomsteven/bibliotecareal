@@ -80,7 +80,7 @@ $result = $stmt->get_result();
         .modal-content {
             background-color: rgba(255, 255, 255, 0.9);
             margin: auto;
-            padding: 20px;
+            padding: 50px;
             border: 1px solid #888;
             width: 90%;
             max-width: 900px;
@@ -88,7 +88,7 @@ $result = $stmt->get_result();
             flex-direction: row;
             /* align-items: center; */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            font-size: 18px;
+            font-size: 22px;
             border-radius: 12px;
             overflow: hidden;
             position: relative;
@@ -155,7 +155,7 @@ $result = $stmt->get_result();
         }
 
         /* Modal Buttons */
-        .modal .add-to-cart {
+        /* .modal .add-to-cart {
             padding: 0.75rem 1rem;
             background-color: green;
             color: white;
@@ -179,7 +179,7 @@ $result = $stmt->get_result();
         .modal .question:hover {
             background-color: var(--yellow-color);
             color: var(--dark-color);
-        }
+        } */
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -277,8 +277,8 @@ $result = $stmt->get_result();
                             <p class="codigo"><strong>Código:</strong> <?php echo htmlspecialchars($row['codigo']); ?></p>
                             <p class="origen"><strong>Origen:</strong> <?php echo htmlspecialchars($row['origen']); ?></p>
                             <div class="actions">
-                                <a href="#" class="add-to-cart" onclick="showBookLocation1()"><i class=""></i> Disponible</a>
-                                <a href="#" class="add-to-wishlist" onclick="showBookLocation2()"><i class="fa-solid fa-heart"></i></a>
+                                <a href="#" class="add-to-cart"> Disponible</a>
+                                <!-- <a href="#" class="add-to-wishlist" onclick="showBookLocation2()"><i class="fa-solid fa-heart"></i></a> -->
                             </div>
                         </div>
                     </div>
@@ -308,11 +308,11 @@ $result = $stmt->get_result();
                 <p id="modal-tipo" class="tipo"></p>
                 <p id="modal-codigo" class="codigo"></p>
                 <p id="modal-origen" class="origen"></p>
-                <div class="actions">
+                <!-- <div class="actions">
                     <a href="#" class="add-to-cart" onclick="showBookLocation1()" ;><i class=""></i> Disponible</a>
                     <a href="#" class="add-to-wishlist" onclick="showBookLocation2()"><i class="fa-solid fa-heart"></i></a>
                     <a href="#" class="question" onclick="showBookLocation3()" ;><i class=""></i>Ver libro</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
