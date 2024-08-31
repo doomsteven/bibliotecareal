@@ -230,7 +230,7 @@ $result = $conn->query($sql);
   <section id="hero">
     <div class="overlay">
       <div class="description">
-        <h1 class="title">Biblioteca Instituto La Troncal.</h1>
+        <h1 class="title">Biblioteca Instituto Superior Tecnológico La Troncal.</h1>
         <q class="quote">Contamos con una gran variedad de libros para reforzar tus conocimientos.</q>
         <!-- <a class="order" href="admin/login/login.php">Agregar Libros</a> -->
       </div>

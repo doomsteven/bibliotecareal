@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
 
     // Redirigir a la lista de libros
-    header("Location: ../../admin/indexpanel.php");
+    header("Location: indexpanel.php");
     exit();
 }
 ?>

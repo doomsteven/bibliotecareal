@@ -122,14 +122,15 @@ if (!isset($_SESSION['usuario'])) {
             </div>
             <div class="links">
                 <a class="link" href="#" id="logoutLink">
-                    <i class="fa-solid fa-user"></i>
-                    Cerrar Sesion
+                    <i class="fa fa-sign-out"></i>
+                    Cerrar Sesión
                 </a>
             </div>
         </div>
         <nav class="categories">
-            <a class="category" href="../admin/indexpanel.php">Administración de libros</a>
+            <a class="category" href="indexpanel.php">Administración de libros</a>
         </nav>
+        
     </header>
 
     <hr>
